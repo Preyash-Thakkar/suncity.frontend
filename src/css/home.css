@@ -1,0 +1,1050 @@
+
+/* home.css */
+.plots-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.plotOne,
+.plotTwo,
+.plotThree,
+.plotFour,
+.plotFive,
+.plotSix,
+.plotSeven,
+.plotEight,
+.plotNine,
+.plotTen,
+.plotEleven,
+.plotTwelve,
+.plotThirteen,
+.plotFourteen,
+.plotFifteen,
+.plotSixteen,
+.plotSeventeen,
+.plotEighteen,
+.plotNineteen,
+.plotTwenty,
+.plotTwentyOne,
+.plotTwentyTwo,
+.plotTwentyThree,
+.plotTwentyFour,
+.plotTwentyFive,
+.plotTwentySix,
+.plotTwentySeven,
+.plotTwentyEight,
+.plotTwentyNine,
+.plotThirty,
+.plotThirtyOne,
+.plotThirtyTwoA,
+.plotThirtyTwoB,
+.plotThirtyThreeA,
+.plotThirtyThreeB,
+.plotThirtyFoure,
+.plotThirtyFive,
+.plotThirtySix,
+.plotThirtySeven,
+.plotThirtyEight,
+.plotThirtyNine,
+.plotFourty,
+.plotFourtyOne,
+.plotFourtyTwo,
+.plotFourtyThree,
+.plotFourtyFoure,
+.plotFourtyFive,
+.plotFourtySix,
+.plotFourtySeven,
+.plotFourtyEight,
+.plotFourtyNineA,
+.plotFourtyNineB,
+.plotFiftey,
+.plotFifteyOne,
+.plotFifteyTwo,
+.plotFifteyThree,
+.plotFifteyFoure,
+.plotFifteyFife,
+.plotFifteySix,
+.plotFifteySevenA,
+.plotFifteySevenB,
+.plotFifteyEight,
+.plotFifteyNineA,
+.plotFifteyNineB,
+.plotSixty,
+.plotSixtyOne,
+.plotSixtyTwo,
+.plotSixtyThree,
+.plotSixtyFour,
+.plotSixtyFive,
+.plotSixtySix,
+.plotSixtySeven,
+.plotSixtyEight,
+.plotSixtyNine,
+.plotSeventy,
+.plotSeventyOne,
+.plotSeventyTwo,
+.plotSeventyThree,
+.plotSeventyFour,
+.plotSeventyFive,
+.plotSeventySix,
+.plotSeventySeven,
+.plotSeventyEight,
+.plotSeventyNineA,
+.plotSeventyNineB,
+.plotSeventyNineC,
+.plotSeventyNineD,
+.plotEighty,
+.plotEightyOne,
+.plotEightyTwo,
+.plotEightyThree,
+.plotEightyFour,
+.plotEightyFiveA,
+.plotEightyFiveB,
+.plotEightyFiveC,
+.plotEightyFiveD,
+.plotEightyFiveE,
+.plotEightyFiveF,
+.plotEightySix,
+.plotEightySeven,
+.plotEightyEight,
+.plotEightyNine,
+.plotNinety,
+.plotNinetyOne,
+.plotNinetyTwo,
+.plotNinetyThreeA,
+.plotNinetyThreeB,
+.plotNinetyThreeC,
+.plotNinetyFour,
+.plotNinetyFive,
+.plotNinetySix,
+.plotNinetySeven,
+.plotNinetyEight,
+.plotNinetyNine,
+.plotOneHundred,
+.plotOneHundredOne,
+.plotOneHundredTwo,
+.plotOneHundredThree,
+.plotOneHundredFour,
+.plotOneHundredFive,
+.plotOneHundredSixA,
+.plotOneHundredSixB,
+.plotOneHundredSevenA,
+.plotOneHundredSevenB,
+.plotOneHundredEight,
+.plotOneHundredNine,
+.plotOneHundredTen,
+.plotOneHundredEleven,
+.plotOneHundredTwelve,
+.plotOneHundredThirteen,
+.plotOneHundredFourteen,
+.plotOneHundredFiveTeen,
+.plotOneHundredSixteen,
+
+/* ... add styles for other plots ... */
+/* // plot 1 ========> */
+.plotOne {
+  position: absolute;
+  top: 59%;
+  left: 13%;
+  transform-origin: 0 0;
+  transform: rotate(341deg);
+}
+/* // plot 2 ========> */
+.plotTwo{
+  top: 57%;
+  left: 11%;
+}
+/* // plot 3 ========> */
+.plotThree{
+  top: 56%;
+  left: 10%;
+
+}
+/* // plot 4 ========> */
+.plotFour{
+  top: 55%;
+  left: 9%;
+
+}
+/* // plot 5 ========> */
+.plotFive{
+  top: 54%;
+  left: 13%;
+}
+/* // plot 6 ========> */
+.plotSix{
+  top: 55%;
+  left: 15%;
+}
+/* // plot 7 ========> */
+.plotSeven{
+  top: 56%;
+  left: 16%;
+}
+/* // plot 8 ========> */
+.plotEight{
+  top: 58%;
+  left: 18%;
+}
+/* // plot 9 ========> */
+.plotNine{
+  top: 57%;
+  left: 22%;
+
+}
+/* // plot 10 ========> */
+.plotTen{
+  top: 55%;
+  left: 21%;
+}
+/* // plot 11 ========> */
+.plotEleven{
+  top: 49%;
+  left: 18%;
+}
+/* // plot 12 ========> */
+.plotTwelve{
+  top: 47%;
+  left: 16%;
+
+}
+/* // plot 13 ========> */
+.plotThirteen{
+  top: 51%;
+  left: 25%;
+}
+/* // plot 14 ========> */
+.plotFourteen{
+  top: 52%;
+  left: 25%;
+}
+/* // plot 15 ========> */
+.plotFifteen{
+  top: 54%;
+  left: 26%;
+}
+/* // plot 16 ========> */
+.plotSixteen{
+  top: 55%;
+  left: 27%;
+}
+/* // plot 17 ========> */
+.plotSeventeen{
+  top: 54%;
+  left: 36%;
+  transform-origin: 0 0;
+  transform: rotate(297deg);
+}
+/* // plot 18 ========> */
+.plotEighteen{
+  top: 55%;
+  left: 40%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 19 ========> */
+.plotNineteen{
+  top: 56%;
+  left: 44%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 20 ========> */
+.plotTwenty{
+  top: 57%;
+  left: 48%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 21 ========> */
+.plotTwentyOne{
+  top: 52%;
+  left: 52%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 22 ========> */
+.plotTwentyTwo{
+  top: 52%;
+  left: 47%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 23 ========> */
+.plotTwentyThree{
+  top: 51%;
+  left: 43%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 24 ========> */
+.plotTwentyFour{
+  top: 50%;
+  left: 39%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 25 ========> */
+.plotTwentyFive{
+  top: 45%;
+  left: 43%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 26 ========> */
+.plotTwentySix{
+  top: 46%;
+  left: 48%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 27 ========> */
+.plotTwentySeven{
+  top: 47%;
+  left: 51%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 28 ========> */
+.plotTwentyEight{
+  top: 48%;
+  left: 56%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 29 ========> */
+.plotTwentyNine{
+  top: 44%;
+  left: 59%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 30 ========> */
+.plotThirty{
+  top: 43%;
+  left: 54%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 31 ========> */
+.plotThirtyOne{
+  top: 42%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 32 A ========> */
+.plotThirtyTwoA{
+  top: 41%;
+  left: 46%;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 32 B ========> */
+.plotThirtyTwoB{
+  top: 38%;
+  left: 49%;
+
+}
+/* // plot 33 A ========> */
+.plotThirtyThreeA{
+  top: 37%;
+  left: 54%;;
+  transform-origin: 0 0;
+  transform: rotate(-57deg);
+}
+/* // plot 33 B ========> */
+.plotThirtyThreeB{
+  top: 39%;
+  left: 58%;
+  transform-origin: 0 0;
+  transform: rotate(27deg);
+}
+/* // plot 34 ========> */
+.plotThirtyFoure{
+  top: 40%;
+  left: 62%;
+  transform-origin: 0 0;
+  transform: rotate(27deg);
+}
+/* // plot 35 ========> */
+.plotThirtyFive{
+  top: 41%;
+  left: 65%;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}
+/* // plot 36 ========> */
+.plotThirtySix{
+  top: 39%;
+  left: 65%;
+  transform-origin: 0 0;
+  transform: rotate(27deg);
+}
+/* // plot 37 ========> */
+.plotThirtySeven{
+  top: 39%;
+  left: 63%;
+  transform-origin: 0 0;
+  transform: rotate(63deg);
+}
+/* // plot 38 ========> */
+.plotThirtyEight{
+  top: 38%;
+  left: 60%;
+  transform-origin: 0 0;
+  transform-origin: 0 0;
+  transform: rotate(27deg);
+}
+/* // plot 39 ========> */
+.plotThirtyNine{
+  top: 36%;
+  left: 61%;
+  transform-origin: 0 0;
+  transform: rotate(27deg);
+}
+/* // plot 40 ========> */
+.plotFourty{
+  top: 37%;
+  left: 64%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 41 ========> */
+.plotFourtyOne{
+  top: 38%;
+  left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(98deg);
+}/* // plot 42 ========> */
+.plotFourtyTwo{
+  top: 36%;
+    left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 43 ========> */
+.plotFourtyThree{
+  top: 36%;
+  left: 66%;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+}/* // plot 44 ========> */
+.plotFourtyFoure{
+  top: 35%;
+  left: 63%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 45 ========> */
+.plotFourtyFive{
+  top: 34%;
+  left: 66%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 46 ========> */
+.plotFourtySix{
+  top: 34%;
+    left: 69%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 47 ========> */
+.plotFourtySeven{
+  top: 34%;
+  left: 81%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 48 ========> */
+.plotFourtyEight{
+  top: 35%;
+  left: 85%;
+  transform-origin: 0 0;
+  transform: rotate(101deg)
+}/* // plot 49 A ========> */
+.plotFourtyNineA{
+  top: 35%;
+  left: 86%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 49 B ========> */
+.plotFourtyNineB{
+  top: 35%;
+  left: 88%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 50 ========> */
+.plotFiftey{
+  top: 36%;
+  left: 85%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 51 ========> */
+.plotFifteyOne{
+  top: 35%;
+  left: 82%;
+  transform-origin: 0 0;
+  transform: rotate(7deg);
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 52  ========> */
+.plotFifteyTwo{
+  top: 35%;
+  left: 80%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 53 ========> */
+.plotFifteyThree{
+  top: 34%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 54  ========> */
+.plotFifteyFoure{
+  top: 34%;
+  left: 74%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 55  ========> */
+.plotFifteyFife{
+  top: 35%;
+  left: 73%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}/* // plot 56 ========> */
+.plotFifteySix{
+  top: 36%;
+  left: 74%;
+  transform-origin: 0 0;
+  transform: rotate(0deg);
+}/* // plot 57 A ========> */
+.plotFifteySevenA{
+  top: 36%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 57 B ========> */
+.plotFifteySevenB{
+  top: 36%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(27deg)
+}
+/* // plot 58  ========> */
+.plotFifteyEight{
+  top: 37%;
+  left: 81%;
+  transform-origin: 0 0;
+  transform: rotate(83deg);
+}
+/* // plot 59 A  ========> */
+.plotFifteyNineA{
+  top: 37%;
+  left: 83%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 59 B  ========> */
+.plotFifteyNineB{
+  top: 37%;
+  left: 85%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 60  ========> */
+.plotSixty{
+  top: 39%;
+  left: 82%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 61  ========> */
+.plotSixtyOne{
+  top: 38%;
+  left: 80%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 62  ========> */
+.plotSixtyTwo{
+  top: 38%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 63  ========> */
+.plotSixtyThree{
+  top: 37%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 64  ========> */
+.plotSixtyFour{
+  top: 37%;
+  left: 73%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 65  ========> */
+.plotSixtyFive{
+  top: 38%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 66  ========> */
+.plotSixtySix{
+  top: 39%;
+  left: 74%;
+  transform-origin: 0 0;
+  transform: rotate(92deg);
+}
+/* // plot 67  ========> */
+.plotSixtySeven{
+  top: 39%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 68  ========> */
+.plotSixtyEight{
+  top: 40%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 69  ========> */
+.plotSixtyNine{
+  top: 40%;
+  left: 81%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 70  ========> */
+.plotSeventy{
+  top: 42%;
+  left: 79%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 71  ========> */
+.plotSeventyOne{
+  top: 41%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 72  ========> */
+.plotSeventyTwo{
+  top: 41%;
+  left: 74%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 73  ========> */
+.plotSeventyThree{
+  top: 40%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 74  ========> */
+.plotSeventyFour{
+  top: 40%;
+  left: 70%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 75  ========> */
+.plotSeventyFive{
+  top: 41%;
+  left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 76  ========> */
+.plotSeventySix{
+  top: 42%;
+  left: 71%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 77  ========> */
+.plotSeventySeven{
+  top: 42%;
+  left: 73%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 78  ========> */
+.plotSeventyEight{
+  top: 42%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 79 A  ========> */
+.plotSeventyNineA{
+  top: 43%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 79 B  ========> */
+.plotSeventyNineB{
+  top: 45%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}/* // plot 79 C  ========> */
+.plotSeventyNineC{
+  top: 44%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 79 D  ========> */
+.plotSeventyNineD{
+  top: 44%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 80  ========> */
+.plotEighty{
+  top: 44%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 81  ========> */
+.plotEightyOne{
+  top: 43%;
+  left: 70%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 82  ========> */
+.plotEightyTwo{
+  top: 43%;
+  left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 83  ========> */
+.plotEightyThree{
+  top: 44%;
+  left: 67%;
+  transform-origin: 0 0;
+  transform: rotate(68deg);
+}
+/* // plot 84  ========> */
+.plotEightyFour{
+  top: 44%;
+  left: 69%;
+  transform-origin: 0 0;
+  transform: rotate(53deg);
+}
+/* // plot 85 A  ========> */
+.plotEightyFiveA{
+  top: 45%;
+  left: 70%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 85 B  ========> */
+.plotEightyFiveB{
+  top: 45%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 85 C  ========> */
+.plotEightyFiveC{
+  top: 45%;
+  left: 74%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 85 D  ========> */
+.plotEightyFiveD{
+  top: 46%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 85 E  ========> */
+.plotEightyFiveE{
+  top: 46%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 85 F  ========> */
+.plotEightyFiveF{
+  top: 48%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 86 ========> */
+.plotEightySix{
+  top: 48%;
+  left: 71%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 87 ========> */
+.plotEightySeven{
+  top: 47%;
+  left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 88 ========> */
+.plotEightyEight{
+  top: 46%;
+  left: 65%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 89 ========> */
+.plotEightyNine{
+  top: 48%;
+  left: 63%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 90 ========> */
+.plotNinety{
+  top: 49%;
+  left: 66%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 91 ========> */
+.plotNinetyOne{
+  top: 50%;
+  left: 69%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 92 ========> */
+.plotNinetyTwo{
+  top: 51%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 93A ========> */
+.plotNinetyThreeA{
+  top: 51%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 93 B ========> */
+.plotNinetyThreeB{
+  top: 52%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 93 C ========> */
+.plotNinetyThreeC{
+  top: 52%;
+  left: 77%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 94  ========> */
+.plotNinetyFour{
+  top: 55%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 95  ========> */
+.plotNinetyFive{
+  top: 54%;
+  left: 71%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 96  ========> */
+.plotNinetySix{
+  top: 54%;
+  left: 68%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 97  ========> */
+.plotNinetySeven{
+  top: 53%;
+  left: 66%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 98  ========> */
+.plotNinetyEight{
+  top: 52%;
+  left: 64%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 99  ========> */
+.plotNinetyNine{
+  top: 52%;
+  left: 60%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 100  ========> */
+.plotOneHundred{
+  top: 54%;
+  left: 59%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 101  ========> */
+.plotOneHundredOne{
+  top: 55%;
+  left: 62%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 102  ========> */
+.plotOneHundredTwo{
+  top: 56%;
+  left: 63%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 103  ========> */
+.plotOneHundredThree{
+  top: 56%;
+  left: 67%;
+
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 104  ========> */
+.plotOneHundredFour{
+  top: 57%;
+  left: 69%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 105  ========> */
+.plotOneHundredFive{
+  top: 57%;
+  left: 72%;
+  transform-origin: 0 0;
+  transform: rotate(26deg);
+}
+/* // plot 106 A ========> */
+.plotOneHundredSixA{
+  top: 58%;
+  left: 75%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 106 B  ========> */
+.plotOneHundredSixB{
+  top: 59%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 107 A  ========> */
+.plotOneHundredSevenA{
+  top: 63%;
+  left: 78%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 107 B  ========> */
+.plotOneHundredSevenB{
+  top: 62%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 108  ========> */
+.plotOneHundredEight{
+  top: 62%;
+  left: 73%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 109  ========> */
+.plotOneHundredNine{
+  top: 61%;
+  left: 69%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 110  ========> */
+.plotOneHundredTen{
+  top: 60%;
+  left: 63%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 111  ========> */
+.plotOneHundredEleven{
+  top: 59%;
+  left: 60%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 112  ========> */
+.plotOneHundredTwelve{
+  top: 58%;
+  left: 56%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 113  ========> */
+.plotOneHundredThirteen{
+  top: 62%;
+  left: 76%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 114  ========> */
+.plotOneHundredFourteen{
+  top: 57%;
+  left: 38%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 115  ========> */
+.plotOneHundredFiveTeen{
+  top: 57%;
+  left: 34%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+/* // plot 116  ========> */
+.plotOneHundredSixteen{
+  top: 58%;
+  left: 30%;
+  transform-origin: 0 0;
+  transform: rotate(53deg); 
+}
+.plotLink {
+  color: #292929;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px;
+}
+a:hover {
+  color: #293857;
+}
+
+/* Add styles for FaLocationDot, spans, and other elements as needed */
