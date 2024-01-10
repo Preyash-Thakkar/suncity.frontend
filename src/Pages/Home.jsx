@@ -2,19 +2,30 @@ import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import MapmImg from "./../assets/img/suncity layout full 21-12_page-0001.jpg";
 import "./../css/home.css";
+import Popup from "./Popup";
+import { useState } from "react";
 
 const Home = () => {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handlePlotClick = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   
   return (
     <React.Fragment>
-      <div style={{ position: 'relative', padding: "20px" }}>
+      <div style={{ position: 'relative', padding: "20px" }} className="map-container">
         <img src={MapmImg} style={{ width: "100%" }} alt="img" />
         <div className="plots-container">
           {/* // plot 1 ========> */}
           <div className="plotOne">
-            <a className="plotLink" href="#">
-              <FaLocationDot /> 
-            </a>
+          <a href="#" className="plotLink" onClick={handlePlotClick}>Plot 1</a>
           </div>
           {/* // plot 2 ========> */}
           <div className="plotTwo">
@@ -813,6 +824,10 @@ const Home = () => {
           {/* Add similar divs for other plots */}
         </div> 
       </div>
+      <Popup 
+        visible={showPopup} 
+        closePopup={closePopup} 
+      />
     </React.Fragment>
   );
 };

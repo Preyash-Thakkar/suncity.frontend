@@ -1,3 +1,18 @@
+/* CSS in home.css or relevant CSS file */
+.map-container {
+  position: relative;
+  padding: 20px;
+}
+
+.popup {
+  position: absolute;
+  top: 10%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Rest of your popup styling */
+}
+
+/* Rest of your CSS */
 
 /* home.css */
 .plots-container {
