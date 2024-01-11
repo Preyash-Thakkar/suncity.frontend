@@ -8,8 +8,10 @@ import { useState } from "react";
 const Home = () => {
 
   const [showPopup, setShowPopup] = useState(false);
+  const [plotNumber,setPlotNumber] = useState(0);
 
-  const handlePlotClick = () => {
+  const handlePlotClick = (plotNumber) => {
+    setPlotNumber(plotNumber)
     setShowPopup(true);
   };
 
@@ -25,12 +27,12 @@ const Home = () => {
         <div className="plots-container">
           {/* // plot 1 ========> */}
           <div className="plotOne">
-          <a href="#" className="plotLink" onClick={handlePlotClick}>Plot 1</a>
+          <a  className="plotLink" href="#" onClick={() => handlePlotClick(1)}>Plot 1</a>
           </div>
           {/* // plot 2 ========> */}
           <div className="plotTwo">
-            <a className="plotLink" href="#">
-              <FaLocationDot /> 
+            <a className="plotLink" href="#" onClick={() => handlePlotClick(2)}>
+              Plot 2 
             </a>
           </div>
           {/* // plot 3 ========> */}
@@ -827,6 +829,7 @@ const Home = () => {
       <Popup 
         visible={showPopup} 
         closePopup={closePopup} 
+        plotNumber={plotNumber}
       />
     </React.Fragment>
   );
