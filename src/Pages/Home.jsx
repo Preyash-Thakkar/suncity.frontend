@@ -1239,12 +1239,6 @@ const Home = () => {
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 164   ========> */}
-          <div className="plotOneHundredSixtyFour">
-            <PlotLink className="plotLink" href="#">
-              <FaLocationDot />
-            </PlotLink>
-          </div>
           {/* Add similar divs for other plots */}
         </div>
       </div>
