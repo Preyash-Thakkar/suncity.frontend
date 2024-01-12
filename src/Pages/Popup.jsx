@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 import toast, { Toaster } from 'react-hot-toast';
 const Popup = ({ visible, closePopup,plotNumber }) => {
@@ -13,8 +14,17 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
     name: false,
     email: false,
     mobile: false,
-    plotNumber:plotNumber
+    plotNumber:false
   });
+
+  
+  // Use useEffect to update formData when plotNumber changes
+  useEffect(() => {
+    setFormData((prevData) => ({
+      ...prevData,
+      plotNumber: plotNumber
+    }));
+  }, [plotNumber]);
 
   const resetForm = () => {
     setFormData({
@@ -22,13 +32,13 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
       email: "",
       mobile: "",
       plotNumber:plotNumber
-
+    
     });
     setFormErrors({
       name: false,
       email: false,
       mobile: false,
-      plotNumber:plotNumber
+      plotNumber:false
     });
     // Any other state resets if necessary
   };
@@ -50,23 +60,31 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
     toast.error("Error submitting form.");
   };
   
-  const handleFormSubmission = async () => {
+  const handleFormSubmission = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
     try {
+      console.log(formData);
+      
       await axios.post("http://localhost:8000/api/submit-form", formData);
       console.log(formData);
       showSuccessToast(); // Show success toast with hot-toast
-      closeAndResetPopup(); // Then close and reset popup
+      setTimeout(() => {
+        closeAndResetPopup(); // Then close and reset popup
+      }, 1000);  // Then close and reset popup
     } catch (error) {
       console.error("Error:", error);
       showErrorToast(); // Show error toast with hot-toast
+      setTimeout(() => {
+        closeAndResetPopup(); // Then close and reset popup
+      }, 1000);
     }
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    handleFormSubmission();
-    console.log(plotNumber) // Handle the complete form submission process
-  };
+  // const handleSubmit = (e) => {
+  //   handleFormSubmission();
+  //   console.log(plotNumber) // Handle the complete form submission process
+  // };
   
   const closeAndResetPopup = () => {
     closePopup(); // Close popup
@@ -122,7 +140,7 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
   return (
     <div style={popupStyle}>
       <h2 style={heading}>Customer Details</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmission }>
         {/* Form fields here with inputStyle and errorStyle */}
         <label htmlFor="name">Name:</label>
         <input
