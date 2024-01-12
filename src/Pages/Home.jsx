@@ -25,7 +25,7 @@ const PlotLink = styled.a`
 const Home = () => {
   // const [showPopup, setShowPopup] = useState(false);
   const [plotDetails, setPlotDetails] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const fetchTeamRoles = async () => {
     try {
       setLoading(true);
@@ -53,14 +53,7 @@ const Home = () => {
     return plot ? plot.status : 'unknown';
   };
     
-  // Usage example
-  const MyComponent = ({ status }) => {
-    return (
-      <PlotLink status={status}>
-        Click me
-      </PlotLink>
-    );
-  };
+  
 
   const [showPopup, setShowPopup] = useState(false);
   const [plotNumber, setPlotNumber] = useState("");
