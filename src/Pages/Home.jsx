@@ -17,7 +17,7 @@ const Home = () => {
         case 'on hold':
           return 'orange';
         default:
-          return 'green'; // Set a default color if status doesn't match any case
+          return 'black'; // Set a default color if status doesn't match any case
       }
     }};
   `;
