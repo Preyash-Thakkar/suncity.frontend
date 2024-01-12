@@ -1,27 +1,59 @@
 import React from "react";
+import axios from 'axios';
 import { FaLocationDot } from "react-icons/fa6";
 import MapmImg from "./../assets/img/suncity layout full 21-12_page-0001.jpg";
 import "./../css/home.css";
 import Popup from "./Popup";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import styled from "styled-components";
 
+const PlotLink = styled.a`
+  color: ${({ status }) => {
+    switch (status) {
+      case 'sold':
+        return 'red';
+      case 'available':
+        return 'green';
+      case 'on hold':
+        return 'orange';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
 const Home = () => {
-  const PlotLink = styled.a`
-    color: ${({ status }) => {
-      switch (status) {
-        case 'sold':
-          return 'red';
-        case 'available':
-          return 'green';
-        case 'on hold':
-          return 'orange';
-        default:
-          return 'black'; // Set a default color if status doesn't match any case
+  // const [showPopup, setShowPopup] = useState(false);
+  const [plotDetails, setPlotDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const fetchTeamRoles = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.post("http://localhost:8000/api/plot/list", {
+        // Add your parameters here
+      });
+      
+      if (response && response.data && response.data.length > 0) {
+        setPlotDetails(response.data);
+      } else {
+        setPlotDetails([]);
       }
-    }};
-  `;
-  
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchTeamRoles();
+  }, []);
+
+  const findPlotStatus = (plotNumber) => {
+    const plot = plotDetails.find(p => p.plot_no === plotNumber.toString());
+    return plot ? plot.status : 'unknown';
+  };
+    
   // Usage example
   const MyComponent = ({ status }) => {
     return (
@@ -51,21 +83,21 @@ const Home = () => {
       >
         <img src={MapmImg} style={{ width: "100%" }} alt="img" />
         <div className="plots-container">
-          {/* // plot 1 ========> */}
+          {/* Plot 1 */}
           <div className="plotOne">
-            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(1)}>
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(1)} status={findPlotStatus(1)}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 2 ========> */}
+          {/* Plot 2 */}
           <div className="plotTwo">
-            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(2)}>
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(2)} status={findPlotStatus(2)}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 3 ========> */}
+          {/* Plot 3 */}
           <div className="plotThree">
-            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(3)}>
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(3)} status={findPlotStatus(3)}>
               <FaLocationDot />
             </PlotLink>
           </div>
