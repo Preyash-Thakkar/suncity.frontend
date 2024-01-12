@@ -1,28 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-import toast, { Toaster } from 'react-hot-toast';
-const Popup = ({ visible, closePopup,plotNumber }) => {
+const Popup = ({ visible, closePopup, plotNumber }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobile: "",
-    plotNumber:plotNumber
-  });
-  const [formErrors, setFormErrors] = useState({
-    name: false,
-    email: false,
-    mobile: false,
-    plotNumber:false
+    plotNumber: plotNumber,
   });
 
-  
-  // Use useEffect to update formData when plotNumber changes
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [errEmail, setErrEmail] = useState(false);
+  const [errName, setErrName] = useState(false);
+  const [errMobile, setErrMobile] = useState(false);
+
   useEffect(() => {
     setFormData((prevData) => ({
       ...prevData,
-      plotNumber: plotNumber
+      plotNumber: plotNumber,
     }));
   }, [plotNumber]);
 
@@ -31,16 +27,10 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
       name: "",
       email: "",
       mobile: "",
-      plotNumber:plotNumber
-    
+      plotNumber: plotNumber,
     });
-    setFormErrors({
-      name: false,
-      email: false,
-      mobile: false,
-      plotNumber:false
-    });
-    // Any other state resets if necessary
+    setErrEmail(false);
+    setErrMobile(false);
   };
 
   const handleInputChange = (e) => {
@@ -51,46 +41,79 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
     });
   };
 
-  const showSuccessToast = () => {
-    toast.success("Thank you for your inquiry!");
-    console.log("Show success toast invoked successfuly")
-  };
-  
-  const showErrorToast = () => {
-    toast.error("Error submitting form.");
-  };
-  
-  const handleFormSubmission = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+  const validate = (formData) => {
+    let errors = {};
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexMobile = /^[0-9]{10}$/;
 
-    try {
-      console.log(formData);
-      
-      await axios.post("http://localhost:8000/api/submit-form", formData);
-      console.log(formData);
-      showSuccessToast(); // Show success toast with hot-toast
-      setTimeout(() => {
-        closeAndResetPopup(); // Then close and reset popup
-      }, 1000);  // Then close and reset popup
-    } catch (error) {
-      console.error("Error:", error);
-      showErrorToast(); // Show error toast with hot-toast
-      setTimeout(() => {
-        closeAndResetPopup(); // Then close and reset popup
-      }, 1000);
+    if (!formData.name) {
+      errors.name = "Name is required";
+      setErrName(true);
+    } else {
+      setErrName(false);
+    }
+
+    if (!formData.email) {
+      errors.email = "Email is required";
+      setErrEmail(true);
+    } else if (!regexEmail.test(formData.email)) {
+      errors.email = "Invalid email";
+      setErrEmail(true);
+    } else {
+      setErrEmail(false);
+    }
+
+    if (!formData.mobile) {
+      errors.mobile = "Mobile number is required";
+      setErrMobile(true);
+    } else if (!regexMobile.test(formData.mobile)) {
+      errors.mobile = "Invalid mobile number";
+      setErrMobile(true);
+    } else {
+      setErrMobile(false);
+    }
+
+    return errors;
+  };
+
+  const handleFormSubmission = async (e) => {
+    e.preventDefault();
+    const errors = validate(formData); // Validate and get errors
+
+    // Check if there are any errors before submitting
+    if (Object.keys(errors).length === 0) {
+      setIsSubmit(true); // Set the submission state to true
+      try {
+        await axios.post("http://localhost:8000/api/submit-form", formData);
+        toast.success("Thank you for your inquiry!");
+        setTimeout(() => {
+          closeAndResetPopup();
+        }, 1000);
+      } catch (error) {
+        toast.error("Error submitting form.");
+        setTimeout(() => {
+          closeAndResetPopup();
+        }, 1000);
+      }
+    } else {
+      setIsSubmit(true); // Set the submission state to true for showing error messages
+      // toast.error("Validation errors, please check your input.");
     }
   };
-  
-  // const handleSubmit = (e) => {
-  //   handleFormSubmission();
-  //   console.log(plotNumber) // Handle the complete form submission process
-  // };
-  
+
   const closeAndResetPopup = () => {
-    closePopup(); // Close popup
-    resetForm(); // Then reset the form
+    closePopup();
+    resetForm();
+    setIsSubmit(false);
   };
-  
+
+  const validClassEmail =
+    errEmail && isSubmit ? "form-control is-invalid" : "form-control";
+  const validClassName =
+    errName && isSubmit ? "form-control is-invalid" : "form-control";
+  const validClassMobile =
+    errMobile && isSubmit ? "form-control is-invalid" : "form-control";
+
   const popupStyle = {
     display: visible ? "block" : "none",
     position: "fixed",
@@ -140,7 +163,7 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
   return (
     <div style={popupStyle}>
       <h2 style={heading}>Customer Details</h2>
-      <form onSubmit={handleFormSubmission }>
+      <form onSubmit={handleFormSubmission}>
         {/* Form fields here with inputStyle and errorStyle */}
         <label htmlFor="name">Name:</label>
         <input
@@ -150,21 +173,25 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
           placeholder="Enter your name"
           value={formData.name}
           onChange={handleInputChange}
-          style={{ ...inputStyle, ...(formErrors.email && errorStyle) }}
-          required
+          style={{ ...inputStyle}}
+          className={validClassName}
         />
+
+        {isSubmit && errName && <p className="text-danger">Invalid Name</p>}
 
         <label htmlFor="email">Email:</label>
         <input
-          type="email"
+          // type="email"
           id="email"
           name="email"
           placeholder="Enter your email"
           value={formData.email}
           onChange={handleInputChange}
-          style={{ ...inputStyle, ...(formErrors.email && errorStyle) }}
-          required
+          style={{ ...inputStyle}}
+          className={validClassEmail}
+          // required
         />
+        {isSubmit && errEmail && <p className="text-danger">Invalid Email</p>}
 
         <label htmlFor="mobile">Mobile Number:</label>
         <input
@@ -174,10 +201,14 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
           placeholder="Enter your mobile number"
           value={formData.mobile}
           onChange={handleInputChange}
-          style={{ ...inputStyle, ...(formErrors.mobile && errorStyle) }}
-          required
+          className={validClassMobile}
+          style={{ ...inputStyle }}
+          // required
         />
-        {/* {plotNumber} */}
+        {isSubmit && errMobile && (
+          <p className="text-danger">Invalid Mobile Number</p>
+        )}
+
         <button
           type="submit"
           style={{
@@ -189,13 +220,12 @@ const Popup = ({ visible, closePopup,plotNumber }) => {
         >
           Submit
         </button>
-      <Toaster/>
-
+        <Toaster />
       </form>
 
       <button
         className="cancel"
-        onClick={closePopup}
+        onClick={closeAndResetPopup}
         style={{
           ...buttonStyle,
           backgroundColor: "transparent",
