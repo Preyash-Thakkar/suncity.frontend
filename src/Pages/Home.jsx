@@ -25,7 +25,7 @@ const PlotLink = styled.a`
 const Home = () => {
   // const [showPopup, setShowPopup] = useState(false);
   const [plotDetails, setPlotDetails] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const fetchTeamRoles = async () => {
     try {
       setLoading(true);

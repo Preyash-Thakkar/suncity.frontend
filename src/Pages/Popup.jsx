@@ -139,6 +139,10 @@ const Popup = ({ visible, closePopup, plotNumber }) => {
     borderRadius: "8px",
     marginTop: "3px",
   };
+  
+  const paragraphStyle = {
+    marginTop:'-10px'
+  }
 
   const buttonStyle = {
     width: "100%",
@@ -177,7 +181,7 @@ const Popup = ({ visible, closePopup, plotNumber }) => {
           className={validClassName}
         />
 
-        {isSubmit && errName && <p className="text-danger">Invalid Name</p>}
+        {isSubmit && errName && <p style={{...paragraphStyle}} className="text-danger" >Invalid Name</p>}
 
         <label htmlFor="email">Email:</label>
         <input
@@ -191,7 +195,7 @@ const Popup = ({ visible, closePopup, plotNumber }) => {
           className={validClassEmail}
           // required
         />
-        {isSubmit && errEmail && <p className="text-danger">Invalid Email</p>}
+        {isSubmit && errEmail && <p style={{...paragraphStyle}} className="text-danger">Invalid Email</p>}
 
         <label htmlFor="mobile">Mobile Number:</label>
         <input
@@ -206,7 +210,7 @@ const Popup = ({ visible, closePopup, plotNumber }) => {
           // required
         />
         {isSubmit && errMobile && (
-          <p className="text-danger">Invalid Mobile Number</p>
+          <p style={{...paragraphStyle}} className="text-danger" m>Invalid Mobile Number</p>
         )}
 
         <button
@@ -234,7 +238,7 @@ const Popup = ({ visible, closePopup, plotNumber }) => {
           top: "-7px",
           right: "-150px",
         }}
-      >
+      > 
         ✖
       </button>
     </div>
