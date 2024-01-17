@@ -3,9 +3,9 @@ import axios from 'axios';
 import { FaLocationDot } from "react-icons/fa6";
 import MapmImg from "./../assets/img/suncity layout full 21-12_page-0001.jpg";
 import "./../css/home.css";
-import Popup from "./Popup";
 import { useState , useEffect} from "react";
 import styled from "styled-components";
+import DetailsPage from "./Detailspage";
 
 const PlotLink = styled.a`
   color: ${({ status }) => {
@@ -52,7 +52,7 @@ const Home = () => {
     const plot = plotDetails.find(p => p.plot_no === plotNumber.toString());
     return plot ? plot.status : 'unknown';
   };
-    
+  
   
 
   const [showPopup, setShowPopup] = useState(false);
@@ -1302,11 +1302,12 @@ const Home = () => {
           {/* Add similar divs for other plots */}
         </div>
       </div>
-      <Popup
+      <DetailsPage
         visible={showPopup}
         closePopup={closePopup}
         plotNumber={plotNumber}
       />
+     
     </React.Fragment>
   );
 };
