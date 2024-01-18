@@ -34,6 +34,9 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
         );
         const plotDetails = response.data;
 
+        // const isStatusDefault = !['sold', 'available', 'reserved'].includes(plotDetails.status);
+
+
         setPlotDetails({
           plot_no: plotDetails.plot_no || "",
           status: plotDetails.status || "",
@@ -42,6 +45,14 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
           area: plotDetails.area || "",
         });
       } catch (error) {
+
+        setPlotDetails({
+          plot_no: 'NA',
+          status:  "NA",
+          Length:  "NA",
+          width:  "NA",
+          area:  "NA",
+        });
         console.error("Error fetching plot details:", error);
       }
     };
