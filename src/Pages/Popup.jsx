@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import "../css/popup.css";
 
-const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) => {
+const Popup = ({
+  visible,
+  closeForm,
+  plotNumber,
+  excecutiveEmail,
+  closeLogin,
+}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,7 +37,7 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
       email: "",
       mobile: "",
       plotNumber: plotNumber,
-      excecutiveEmail:excecutiveEmail
+      excecutiveEmail: excecutiveEmail,
     });
     setErrEmail(false);
     setErrMobile(false);
@@ -81,11 +88,10 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
 
   const handleFormSubmission = async (e) => {
     e.preventDefault();
-    const errors = validate(formData); // Validate and get errors
+    const errors = validate(formData); 
 
-    // Check if there are any errors before submitting
     if (Object.keys(errors).length === 0) {
-      setIsSubmit(true); // Set the submission state to true
+      setIsSubmit(true); 
       try {
         await axios.post("http://localhost:8000/api/submit-form", formData);
         toast.success("Thank you for your inquiry!");
@@ -100,8 +106,7 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
         }, 1000);
       }
     } else {
-      setIsSubmit(true); // Set the submission state to true for showing error messages
-      // toast.error("Validation errors, please check your input.");
+      setIsSubmit(true); 
     }
   };
 
@@ -119,61 +124,10 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
   const validClassMobile =
     errMobile && isSubmit ? "form-control is-invalid" : "form-control";
 
-  const popupStyle = {
-    display: visible ? "block" : "none",
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "#fff",
-    border: "2px solid #333",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-    padding: "20px",
-    width: "350px",
-    textAlign: "left",
-    borderRadius: "8px",
-    zIndex: "1000",
-  };
-
-  const inputStyle = {
-    width: "100%",
-    padding: "8px",
-    marginBottom: "10px",
-    boxSizing: "border-box",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    marginTop: "3px",
-  };
-
-  const paragraphStyle = {
-    marginTop: "-10px",
-  };
-
-  const buttonStyle = {
-    width: "100%",
-    padding: "12px",
-    cursor: "pointer",
-    border: "none",
-    borderRadius: "4px",
-    fontSize: "16px",
-    fontWeight: "bold",
-    transition: "background-color 0.3s",
-  };
-
-  const errorStyle = {
-    border: "1px solid red",
-  };
-
-  const heading = {
-    textAlign: "center",
-    fontSize: "23px",
-  };
-
   return (
-    <div style={popupStyle}>
-      <h2 style={heading}>Customer Details</h2>
+    <div className={`popup ${visible ? "visible" : ""}`}>
+      <h2 className="heading">Customer Details</h2>
       <form onSubmit={handleFormSubmission}>
-        {/* Form fields here with inputStyle and errorStyle */}
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -182,32 +136,24 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
           placeholder="Enter your name"
           value={formData.name}
           onChange={handleInputChange}
-          style={{ ...inputStyle }}
-          className={validClassName}
+          className={`input ${validClassName}`}
         />
 
         {isSubmit && errName && (
-          <p style={{ ...paragraphStyle }} className="text-danger">
-            Invalid Name
-          </p>
+          <p className="paragraph text-danger">Invalid Name</p>
         )}
 
         <label htmlFor="email">Email:</label>
         <input
-          // type="email"
           id="email"
           name="email"
           placeholder="Enter your email"
           value={formData.email}
           onChange={handleInputChange}
-          style={{ ...inputStyle }}
-          className={validClassEmail}
-          // required
+          className={`input ${validClassEmail}`}
         />
         {isSubmit && errEmail && (
-          <p style={{ ...paragraphStyle }} className="text-danger">
-            Invalid Email
-          </p>
+          <p className="paragraph text-danger">Invalid Email</p>
         )}
 
         <label htmlFor="mobile">Mobile Number:</label>
@@ -218,14 +164,11 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
           placeholder="Enter your mobile number"
           value={formData.mobile}
           onChange={handleInputChange}
-          className={validClassMobile}
-          style={{ ...inputStyle }}
-          // required
+          className={`input ${validClassMobile}`}
+
         />
         {isSubmit && errMobile && (
-          <p style={{ ...paragraphStyle }} className="text-danger" m>
-            Invalid Mobile Number
-          </p>
+          <p className="paragraph text-danger">Invalid Mobile Number</p>
         )}
 
         <label htmlFor="excecutiveEmail">Market Excecutive:</label>
@@ -233,38 +176,20 @@ const Popup = ({ visible, closeForm, plotNumber, excecutiveEmail,closeLogin }) =
           type="text"
           id="mobile"
           name="Market Excecutive"
-          // placeholder="Enter your mobile number"
           value={formData.excecutiveEmail}
-          style={{ ...inputStyle }}
+          className="input"
           readOnly
-          // required
         />
 
-        <button
-          type="submit"
-          style={{
-            ...buttonStyle,
-            backgroundColor: "#4caf50",
-            color: "#fff",
-            marginTop: "20px",
-          }}
-        >
+        <button type="submit" className="button submit-button">
           Submit
         </button>
         <Toaster />
       </form>
 
       <button
-        className="cancel"
+        className="button cancel close-button"
         onClick={closeAndResetPopup}
-        style={{
-          ...buttonStyle,
-          backgroundColor: "transparent",
-          color: "#f44336",
-          position: "absolute",
-          top: "-7px",
-          right: "-150px",
-        }}
       >
         ✖
       </button>
