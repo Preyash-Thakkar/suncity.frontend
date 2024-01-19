@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LoginPage from "./Loginpage";
 import "../css/Detailspage.css";
+import toast from "react-hot-toast";
 
 const DetailsPage = ({ visible, closePopup, plotNumber }) => {
   const [isInquiry, setIsInquiry] = useState(false);
+  const [isValidPlot , setIsValidPlot] = useState(true);
 
   const [showLogin, setShowLogin] = useState(false);
 
@@ -44,6 +46,8 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
           width: plotDetails.width || "",
           area: plotDetails.area || "",
         });
+
+        setIsValidPlot(true);
       } catch (error) {
 
         setPlotDetails({
@@ -53,6 +57,8 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
           width:  "NA",
           area:  "NA",
         });
+        setIsValidPlot(false);
+        toast.error("Not available")
         console.error("Error fetching plot details:", error);
       }
     };
@@ -109,6 +115,7 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
             type="submit"
             className="buttonStyle submit-button"
             onClick={handleInquiry}
+            disabled={!isValidPlot}
           >
             Inquiry
           </button>
