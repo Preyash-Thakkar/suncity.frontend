@@ -46,14 +46,17 @@ const LoginPage = ({ visible, closeLogin, plotNumber }) => {
 
     if (validate()) {
       try {
-        await axios.post("http://localhost:8000/api/login", {
+        const response = await axios.post("http://localhost:8000/api/login", {
           email,
           password,
         });
+
+        console.log("res",response);
         toast.success("Login successful!");
         setiForm(true);
         setShowForm(true);
         setExcecutiveEmail(email);
+        localStorage.setItem("executive",response.data.executivename);
       } catch (error) {
         toast.error("Authentication Error!");
       }

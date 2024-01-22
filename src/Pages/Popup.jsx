@@ -103,6 +103,7 @@ const Popup = ({
         toast.error("Error submitting form.");
         setTimeout(() => {
           closeAndResetPopup();
+          window.location.reload();
         }, 1000);
       }
     } else {

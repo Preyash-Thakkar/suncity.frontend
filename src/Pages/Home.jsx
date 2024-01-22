@@ -6,6 +6,7 @@ import "./../css/home.css";
 import { useState , useEffect} from "react";
 import styled from "styled-components";
 import DetailsPage from "./Detailspage";
+import Header from "./Header";
 
 const PlotLink = styled.a`
   color: ${({ status }) => {
@@ -25,7 +26,20 @@ const PlotLink = styled.a`
 const Home = () => {
   // const [showPopup, setShowPopup] = useState(false);
   const [plotDetails, setPlotDetails] = useState([]);
+  
   const [loading, setLoading] = useState(false);
+
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    const storedUserEmail = localStorage.getItem("executive");
+    if (storedUserEmail) {
+      setUserEmail(storedUserEmail);
+    }
+
+    console.log("email stotred",storedUserEmail);
+  }, []);
+
   const fetchTeamRoles = async () => {
     try {
       setLoading(true);
@@ -48,6 +62,7 @@ const Home = () => {
     fetchTeamRoles();
   }, []);
 
+
   const findPlotStatus = (plotNumber) => {
     const plot = plotDetails.find(p => p.plot_no === plotNumber.toString());
     return plot ? plot.status : 'unknown';
@@ -60,7 +75,21 @@ const Home = () => {
 
   const handlePlotClick = (plotNumber) => {
     setPlotNumber(plotNumber);
-    setShowPopup(true);
+
+    // Check if the user is logged in
+    if (userEmail) {
+      // Redirect to the next page or perform any other action
+      console.log("User is logged in. Redirecting...");
+      setShowPopup(true);
+    } else {
+      // Display the login form
+      setShowPopup(true);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("executive");
+    setUserEmail("");
   };
 
   const closePopup = () => {
@@ -69,10 +98,15 @@ const Home = () => {
 
   return (
     <React.Fragment>
+    <Header userEmail={userEmail} onLogout={handleLogout} />
       <div
         style={{ position: "relative", padding: "20px" }}
         className="map-container"
       >
+      <div
+        style={{ position: "relative", padding: "20px" }}
+        className="map-container"
+      ></div>
         <img src={MapmImg} style={{ width: "100%" }} alt="img" />
         <div className="plots-container">
           {/* Plot 1 */}
