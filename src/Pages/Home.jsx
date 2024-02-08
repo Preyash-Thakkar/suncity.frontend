@@ -100,13 +100,13 @@ const Home = () => {
     <React.Fragment>
     <Header userEmail={userEmail} onLogout={handleLogout} />
       <div
-        style={{ position: "relative", padding: "20px" }}
+        // style={{ position: "relative", padding: "20px" }}
         className="map-container"
       >
-      <div
+      {/* <div
         style={{ position: "relative", padding: "20px" }}
         className="map-container"
-      ></div>
+      ></div> */}
         <img src={MapmImg} style={{ width: "100%" }} alt="img" />
         <div className="plots-container">
           {/* Plot 1 */}
