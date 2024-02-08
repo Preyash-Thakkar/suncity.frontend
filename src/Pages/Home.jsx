@@ -89,6 +89,7 @@ const Home = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("executive");
+    console.log("hjhfefjejf");
     // Optionally clear any other authentication states or tokens here
     window.location.reload(); // This refreshes the page instantly
   };
