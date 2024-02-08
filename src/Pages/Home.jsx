@@ -89,8 +89,10 @@ const Home = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("executive");
-    //setUserEmail("");
+    // Optionally clear any other authentication states or tokens here
+    window.location.reload(); // This refreshes the page instantly
   };
+  
 
   const closePopup = () => {
     setShowPopup(false);
