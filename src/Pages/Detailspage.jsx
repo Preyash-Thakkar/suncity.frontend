@@ -4,10 +4,17 @@ import axios from "axios";
 import LoginPage from "./Loginpage";
 import "../css/Detailspage.css";
 import toast from "react-hot-toast";
+import Popup from "./Popup";
 
-const DetailsPage = ({ visible, closePopup, plotNumber }) => {
+const DetailsPage = ({ visible, closePopup, plotNumber}) => {
   const [isInquiry, setIsInquiry] = useState(false);
   const [isValidPlot , setIsValidPlot] = useState(true);
+  const [popup,setpopup] = useState(false);
+  const [excecutiveEmail, setExcecutiveEmail] = useState(""); 
+
+  const closeInquiry = () =>{
+    setpopup(false);
+  }
 
   const [showLogin, setShowLogin] = useState(false);
 
@@ -25,7 +32,13 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
 
   const handleInquiry = () => {
     setIsInquiry(true);
+    const user = localStorage.getItem("executive");
+    const userEmail = localStorage.getItem("executiveEmail")
+    if(user){
+       setpopup(true);
+    }
     setShowLogin(true);
+    setExcecutiveEmail(userEmail);
   };
 
   useEffect(() => {
@@ -124,7 +137,14 @@ const DetailsPage = ({ visible, closePopup, plotNumber }) => {
             ✖
           </button>
         </div>
+        
       )}
+      <Popup
+        visible={popup}
+        closeInquiry={closeInquiry}
+        plotNumber={plotNumber}
+        excecutiveEmail={excecutiveEmail}
+      />
     </>
   );
 };

@@ -89,7 +89,7 @@ const Home = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("executive");
-    setUserEmail("");
+    //setUserEmail("");
   };
 
   const closePopup = () => {

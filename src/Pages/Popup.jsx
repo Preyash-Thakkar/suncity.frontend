@@ -4,6 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 import "../css/popup.css";
 
 const Popup = ({
+  closeInquiry,
   visible,
   closeForm,
   plotNumber,
@@ -190,7 +191,7 @@ const Popup = ({
 
       <button
         className="button cancel close-button"
-        onClick={closeAndResetPopup}
+        onClick={closeInquiry}
       >
         ✖
       </button>

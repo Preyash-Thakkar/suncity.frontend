@@ -57,6 +57,7 @@ const LoginPage = ({ visible, closeLogin, plotNumber }) => {
         setShowForm(true);
         setExcecutiveEmail(email);
         localStorage.setItem("executive",response.data.executivename);
+        localStorage.setItem("executiveEmail",response.data.executiveEmail)
       } catch (error) {
         toast.error("Authentication Error!");
       }
