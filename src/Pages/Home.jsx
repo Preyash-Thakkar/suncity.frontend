@@ -1,7 +1,8 @@
 import React from "react";
 import axios from 'axios';
 import { FaLocationDot } from "react-icons/fa6";
-import MapmImg from "./../assets/img/suncity layout full 21-12_page-0001.jpg";
+// import MapmImg from "./../assets/img/suncity layout full 21-12_page-0001.jpg";
+import MapmImg from "./../assets/img/Lyout2.jpg";
 import "./../css/home.css";
 import { useState , useEffect} from "react";
 import styled from "styled-components";
@@ -154,14 +155,26 @@ const Home = () => {
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 8 ========> */}
-          <div className="plotEight">
+          {/* // plot 8/A ========> */} 
+          <div className="plotEightA">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(8)} status={findPlotStatus(8)}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 9 ========> */}
-          <div className="plotNine">
+          {/* // plot 8/B ========> */} 
+          <div className="plotEightB">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(8)} status={findPlotStatus(8)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+          {/* // plot 9/A ========> */}
+          <div className="plotNineA">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(9)} status={findPlotStatus(9)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+            {/* // plot 9/B ========> */}
+            <div className="plotNineB">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(9)} status={findPlotStatus(9)}>
               <FaLocationDot />
             </PlotLink>
@@ -202,8 +215,14 @@ const Home = () => {
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 16 ========> */}
-          <div className="plotSixteen">
+          {/* // plot 16/A ========> */}
+          <div className="plotSixteenA">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(16)} status={findPlotStatus(16)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+           {/* // plot 16/B ========> */}
+           <div className="plotSixteenB">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(16)} status={findPlotStatus(16)}>
               <FaLocationDot />
             </PlotLink>
@@ -310,6 +329,18 @@ const Home = () => {
               <FaLocationDot />
             </PlotLink>
           </div>
+          {/* // plot 32 C ========> */}
+          <div className="plotThirtyTwoC">
+            <PlotLink className="plotLink" href="#"  onClick={() => handlePlotClick('32-B')} status={findPlotStatus('32-B')}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+          {/* // plot 32 D ========> */}
+          <div className="plotThirtyTwoD">
+            <PlotLink className="plotLink" href="#"  onClick={() => handlePlotClick('32-B')} status={findPlotStatus('32-B')}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
           {/* // plot 33 A ========> */}
           <div className="plotThirtyThreeA">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick('33-A')} status={findPlotStatus('33-A')}>
@@ -348,6 +379,48 @@ const Home = () => {
           </div>{" "}
           {/* // plot 38  ========> */}
           <div className="plotThirtyEight">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 A ========> */}
+           <div className="plotThirtyEightA">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 B  ========> */}
+           <div className="plotThirtyEightB">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 C ========> */}
+           <div className="plotThirtyEightC">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 D ========> */}
+           <div className="plotThirtyEightD">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 E ========> */}
+           <div className="plotThirtyEightE">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 F ========> */}
+           <div className="plotThirtyEightF">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>{" "}
+           {/* // plot 38 G ========> */}
+           <div className="plotThirtyEightG">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(38)} status={findPlotStatus(38)}>
               <FaLocationDot />
             </PlotLink>
@@ -856,20 +929,38 @@ const Home = () => {
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 108    ========> */}
-          <div className="plotOneHundredEight">
+          {/* // plot 108 E   ========> */}
+          <div className="plotOneHundredEightE">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(108)} status={findPlotStatus(108)}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 109   ========> */}
-          <div className="plotOneHundredNine">
+            {/* // plot 108 W   ========> */}
+            <div className="plotOneHundredEightW">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(108)} status={findPlotStatus(108)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+          {/* // plot 109 E  ========> */}
+          <div className="plotOneHundredNineE">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(109)} status={findPlotStatus(109)}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 110   ========> */}
-          <div className="plotOneHundredTen">
+          {/* // plot 109 W  ========> */}
+          <div className="plotOneHundredNineW">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(109)} status={findPlotStatus(109)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+          {/* // plot 110 A  ========> */}
+          <div className="plotOneHundredTenA">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(110)} status={findPlotStatus(110)}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+           {/* // plot 110 B  ========> */}
+           <div className="plotOneHundredTenB">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(110)} status={findPlotStatus(110)}>
               <FaLocationDot />
             </PlotLink>
@@ -917,19 +1008,25 @@ const Home = () => {
             </PlotLink>
           </div>
           {/* // plot 117/2   ========> */}
-          <div className="plotOneHundredSevenTeenTwo">
+          {/* <div className="plotOneHundredSevenTeenTwo">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick('117-2')} status={findPlotStatus('117-2')}>
               <FaLocationDot />
             </PlotLink>
-          </div>
+          </div> */}
           {/* // plot 117/3   ========> */}
           <div className="plotOneHundredSevenTeenThree">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick('117-3')} status={findPlotStatus('117-3')}>
               <FaLocationDot />
             </PlotLink>
           </div>
-          {/* // plot 117/4   ========> */}
-          <div className="plotOneHundredSevenTeenFour">
+          {/* // plot 117/4/A   ========> */}
+          <div className="plotOneHundredSevenTeenFourA">
+            <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick('117-4')} status={findPlotStatus('117-4')}>
+              <FaLocationDot />
+            </PlotLink>
+          </div>
+            {/* // plot 117/4/B   ========> */}
+            <div className="plotOneHundredSevenTeenFourB">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick('117-4')} status={findPlotStatus('117-4')}>
               <FaLocationDot />
             </PlotLink>
@@ -1331,11 +1428,11 @@ const Home = () => {
             </PlotLink>
           </div>
           {/* // plot 163   ========> */}
-          <div className="plotOneHundredSixtyThree">
+          {/* <div className="plotOneHundredSixtyThree">
             <PlotLink className="plotLink" href="#" onClick={() => handlePlotClick(163)} status={findPlotStatus(163)}>
               <FaLocationDot />
             </PlotLink>
-          </div>
+          </div> */}
           {/* Add similar divs for other plots */}
         </div>
       </div>
